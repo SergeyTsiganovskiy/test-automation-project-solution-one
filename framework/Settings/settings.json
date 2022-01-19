@@ -1,0 +1,7 @@
+﻿{
+  "Url": "http://eaapp.somee.com/",
+  "BrowserType": "Chrome",
+  "LogPath": "C:\\EAAutoLogs\\",
+  "ConnectionString": "Data Source=EAEmployeeDB.mssql.somee.com;User ID=kartmcad_SQLLogin_1;Password=wtzaxoan1l;persist security info=False;initial catalog=EAEmployeeDB"
+} 
+

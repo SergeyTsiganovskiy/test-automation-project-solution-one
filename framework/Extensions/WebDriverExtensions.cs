@@ -8,7 +8,6 @@ namespace framework.Extensions
     public static class WebDriverExtensions
     {
 
-
         public static void WaitForPageLoaded(this IWebDriver driver)
         {
             driver.WaitForCondition(dri =>

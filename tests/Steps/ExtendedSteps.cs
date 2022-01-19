@@ -1,24 +1,21 @@
-﻿using framework.Base;
-using framework.Config;
-using framework.Helpers;
+﻿using framework.Helpers;
+using framework.Settings;
 using TechTalk.SpecFlow;
+using tests.Hooks;
 using tests.Pages;
 
 namespace tests.Steps
 {
     [Binding]
-    internal class ExtendedSteps : BaseStep
+    internal class ExtendedSteps : HookInitialize
     {
-        private readonly ParallelConfig _parallelConfig;
-
-        public ExtendedSteps(ParallelConfig parallelConfig) : base(parallelConfig)
+        public ExtendedSteps(ParallelConfig parallelConfig, FeatureContext featureContext, ScenarioContext scenarioContext) : base(parallelConfig, featureContext, scenarioContext)
         {
-            _parallelConfig = parallelConfig;
         }
 
         public void NaviateSite()
         {
-            _parallelConfig.Driver.Navigate().GoToUrl(Settings.AUT);
+            _parallelConfig.Driver.Navigate().GoToUrl(_settings.Url);
             //LogHelpers.Write("Opened the browser !!!");
         }
 
@@ -34,7 +31,7 @@ namespace tests.Steps
         public void GivenIDeleteEmployeeBeforeIStartRunningTest(string employeeName)
         {
             string query = "delete from Employees where Name = '" + employeeName + "'";
-            Settings.ApplicationCon.ExecuteQuery(query);
+            _settings.ApplicationDbConnection.ExecuteQuery(query);
         }
 
         [Given(@"I see application opened")]

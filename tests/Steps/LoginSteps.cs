@@ -1,20 +1,16 @@
-﻿using framework.Base;
+﻿using framework.Settings;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using tests.Hooks;
 using tests.Pages;
 
 namespace tests.Steps
 {
     [Binding]
-    public class LoginSteps : BaseStep
+    public class LoginSteps : HookInitialize
     {
-
-        //Context injection
-        private readonly ParallelConfig _parallelConfig;
-
-        public LoginSteps(ParallelConfig parallelConfig) : base(parallelConfig)
+        public LoginSteps(ParallelConfig parallelConfig, FeatureContext featureContext, ScenarioContext scenarioContext) : base(parallelConfig, featureContext, scenarioContext)
         {
-            _parallelConfig = parallelConfig;
         }
 
         [When(@"I enter UserName and Password")]
@@ -39,8 +35,5 @@ namespace tests.Steps
         {
             _parallelConfig.CurrentPage.As<HomePage>().ClickLogOff();
         }
-
-
-
     }
 }

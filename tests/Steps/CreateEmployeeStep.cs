@@ -1,19 +1,16 @@
 ﻿using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
-using framework.Base;
 using tests.Pages;
+using tests.Hooks;
+using framework.Settings;
 
 namespace tests.Steps
 {
     [Binding]
-    class CreateEmployeeStep : BaseStep
+    public class CreateEmployeeStep : HookInitialize
     {
-        //Context injection
-        private readonly ParallelConfig _parallelConfig;
-
-        public CreateEmployeeStep(ParallelConfig parellelConfig) : base(parellelConfig)
+        public CreateEmployeeStep(ParallelConfig parallelConfig, FeatureContext featureContext, ScenarioContext scenarioContext) : base(parallelConfig, featureContext, scenarioContext)
         {
-            _parallelConfig = parellelConfig;
         }
 
         [Then(@"I enter following details")]
@@ -30,7 +27,5 @@ namespace tests.Steps
         {
             //ScenarioContext.Current.Pending();
         }
-
-
     }
 }

@@ -1,5 +1,6 @@
 ﻿using framework.Base;
 using framework.Extensions;
+using framework.Settings;
 using OpenQA.Selenium;
 
 namespace tests.Pages

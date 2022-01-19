@@ -1,12 +1,12 @@
 ﻿using AventStack.ExtentReports;
+using framework.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 
-namespace framework.Base
+namespace framework.Settings
 {
     public class ParallelConfig
     {
-
         public RemoteWebDriver Driver { get; set; }
 
         public BasePage CurrentPage { get; set; }

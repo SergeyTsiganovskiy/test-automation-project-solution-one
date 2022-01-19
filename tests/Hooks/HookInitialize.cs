@@ -3,9 +3,11 @@ using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using AventStack.ExtentReports.Gherkin.Model;
 using NUnit.Framework;
-using framework.Base;
-using framework.Config;
 using framework.Helpers;
+using System.Configuration;
+using Newtonsoft.Json;
+using System.IO;
+using framework.Settings;
 //Same parallel
 [assembly: Parallelizable(ParallelScope.Fixtures)]
 
@@ -13,22 +15,21 @@ namespace tests.Hooks
 {
 
     [Binding]
-    public class HookInitialize : TestInitializeHook
+    public class HookInitialize 
     {
-        private readonly ParallelConfig _parallelConfig;
+        protected readonly ParallelConfig _parallelConfig;
+        protected Settings _settings;
         private readonly FeatureContext _featureContext;
         private readonly ScenarioContext _scenarioContext;
         private ExtentTest _currentScenarioName;
 
 
-        public HookInitialize(ParallelConfig parallelConfig, FeatureContext featureContext, ScenarioContext scenarioContext) : base(parallelConfig)
+        public HookInitialize(ParallelConfig parallelConfig, FeatureContext featureContext, ScenarioContext scenarioContext) 
         {
             _parallelConfig = parallelConfig;
             _featureContext = featureContext;
             _scenarioContext = scenarioContext;
         }
-
-
 
         private static ExtentTest featureName;
         private static ExtentReports extent;
@@ -106,8 +107,18 @@ namespace tests.Hooks
         [BeforeScenario]
         public void Initialize()
         {
-            InitializeSettings();
-            Settings.ApplicationCon = Settings.ApplicationCon.DBConnect(Settings.AppConnectionString);
+            //Set all the settings for framework
+            var text = File.ReadAllText(@".\Config\settings.json");
+            _settings = JsonConvert.DeserializeObject<Settings>(text);
+            _settings.ApplicationDbConnection = _settings.ApplicationDbConnection.DBConnect(_settings.ConnectionString);
+            //Set Log
+            LogHelpers.CreateLogFile();
+
+            //Open Browser
+            WebDriverUtility webDriverUtility = new WebDriverUtility();
+            _parallelConfig.Driver = webDriverUtility.GetDriver(webDriverUtility.GetDriverOption(_settings.BrowserType));
+
+            LogHelpers.Write("Initialized framework");
 
             //Get feature Name
             featureName = extent.CreateTest<Feature>(_featureContext.FeatureInfo.Title);
@@ -133,7 +144,5 @@ namespace tests.Hooks
             extent.Flush();
 
         }
-
-
     }
 }
