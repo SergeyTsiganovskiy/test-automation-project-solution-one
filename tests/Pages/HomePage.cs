@@ -1,11 +1,8 @@
-﻿using System;
-using System.Data;
-using System.Linq;
-using EAAutoFramework.Base;
-using EAAutoFramework.Extensions;
+﻿using framework.Base;
+using framework.Extensions;
 using OpenQA.Selenium;
 
-namespace EAEmployeeTest.Pages
+namespace tests.Pages
 {
     internal class HomePage : BasePage
     {

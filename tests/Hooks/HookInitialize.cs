@@ -1,15 +1,15 @@
-﻿using EAAutoFramework.Base;
-using TechTalk.SpecFlow;
-using EAAutoFramework.Helpers;
-using EAAutoFramework.Config;
+﻿using TechTalk.SpecFlow;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using AventStack.ExtentReports.Gherkin.Model;
 using NUnit.Framework;
+using framework.Base;
+using framework.Config;
+using framework.Helpers;
 //Same parallel
 [assembly: Parallelizable(ParallelScope.Fixtures)]
 
-namespace CrossPlatformEATest.Hooks
+namespace tests.Hooks
 {
 
     [Binding]
@@ -86,7 +86,7 @@ namespace CrossPlatformEATest.Hooks
             var htmlReporter = new ExtentHtmlReporter(@"C:\extentreport\SeleniumWithSpecflow\SpecflowParallelTest\ExtentReport.html");
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
             //Attach report to reporter
-            extent = new AventStack.ExtentReports.ExtentReports();
+            extent = new ExtentReports();
             klov = new ExtentKlovReporter();
 
             //klov.InitMongoDbConnection("localhost", 27017);

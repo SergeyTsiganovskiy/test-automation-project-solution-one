@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EAAutoFramework.Extensions
+namespace framework.Extensions
 {
     public static class WebElementExtensions
     {
@@ -43,7 +43,7 @@ namespace EAAutoFramework.Extensions
 
         public static void AssertElementPresent(this IWebElement element)
         {
-            if (!IsElementPresent(element))
+            if (!element.IsElementPresent())
                 throw new Exception(string.Format("Element Not Present exception"));
         }
 

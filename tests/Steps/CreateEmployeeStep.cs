@@ -1,9 +1,9 @@
-﻿using EAAutoFramework.Base;
-using CrossPlatformEATest.Pages;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using framework.Base;
+using tests.Pages;
 
-namespace CrossPlatformEATest.Steps
+namespace tests.Steps
 {
     [Binding]
     class CreateEmployeeStep : BaseStep

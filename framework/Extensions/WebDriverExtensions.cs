@@ -3,7 +3,7 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.Diagnostics;
 
-namespace EAAutoFramework.Extensions
+namespace framework.Extensions
 {
     public static class WebDriverExtensions
     {

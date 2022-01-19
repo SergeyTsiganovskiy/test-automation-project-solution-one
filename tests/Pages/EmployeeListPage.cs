@@ -1,8 +1,7 @@
-﻿using CrossPlatformEATest.Pages;
-using EAAutoFramework.Base;
+﻿using framework.Base;
 using OpenQA.Selenium;
 
-namespace EAEmployeeTest.Pages
+namespace tests.Pages
 {
     internal class EmployeeListPage : BasePage
     {

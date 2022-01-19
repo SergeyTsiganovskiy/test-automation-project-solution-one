@@ -1,7 +1,7 @@
-﻿using EAAutoFramework.Base;
+﻿using framework.Base;
 using Newtonsoft.Json;
 
-namespace EAAutoFramework.Config
+namespace framework.Config
 {
     [JsonObject("testSettings")]
     public class TestSettings

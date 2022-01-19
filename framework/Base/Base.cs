@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EAAutoFramework.Base
+namespace framework.Base
 {
     public class Base
     {
@@ -14,7 +14,7 @@ namespace EAAutoFramework.Base
 
         protected TPage GetInstance<TPage>() where TPage : BasePage, new()
         {
-            return (TPage) Activator.CreateInstance(typeof(TPage));
+            return (TPage)Activator.CreateInstance(typeof(TPage));
         }
 
         public TPage As<TPage>() where TPage : BasePage

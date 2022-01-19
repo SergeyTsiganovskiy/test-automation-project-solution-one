@@ -1,21 +1,16 @@
-﻿using EAAutoFramework.Base;
-using System;
-using System.Collections.Generic;
+﻿using framework.Base;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EAAutoFramework.Config
+namespace framework.Config
 {
     public class Settings
     {
 
         public static int Timeout { get; set; }
 
-        public static string  IsReporting { get; set; }
+        public static string IsReporting { get; set; }
 
-        public static string  TestType { get; set; }
+        public static string TestType { get; set; }
 
         public static string AUT { get; set; }
 

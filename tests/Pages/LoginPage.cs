@@ -1,9 +1,8 @@
-﻿using EAAutoFramework.Base;
+﻿using framework.Base;
+using framework.Extensions;
 using OpenQA.Selenium;
-using EAAutoFramework.Extensions;
-using System;
 
-namespace EAEmployeeTest.Pages
+namespace tests.Pages
 {
     class LoginPage : BasePage
     {

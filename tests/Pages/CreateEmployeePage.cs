@@ -1,10 +1,8 @@
-﻿using System;
-using EAAutoFramework.Base;
-using EAAutoFramework.Extensions;
-using EAEmployeeTest.Pages;
+﻿using framework.Base;
+using framework.Extensions;
 using OpenQA.Selenium;
 
-namespace CrossPlatformEATest.Pages
+namespace tests.Pages
 {
     internal class CreateEmployeePage : BasePage
     {

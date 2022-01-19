@@ -1,4 +1,4 @@
-﻿namespace EAAutoFramework.Base
+﻿namespace framework.Base
 {
     public class Browser
     {

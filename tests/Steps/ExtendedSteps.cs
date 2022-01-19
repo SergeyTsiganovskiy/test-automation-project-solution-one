@@ -1,11 +1,10 @@
-﻿using CrossPlatformEATest.Pages;
-using EAAutoFramework.Base;
-using EAAutoFramework.Config;
-using EAAutoFramework.Helpers;
-using EAEmployeeTest.Pages;
+﻿using framework.Base;
+using framework.Config;
+using framework.Helpers;
 using TechTalk.SpecFlow;
+using tests.Pages;
 
-namespace EAEmployeeTest.Steps
+namespace tests.Steps
 {
     [Binding]
     internal class ExtendedSteps : BaseStep

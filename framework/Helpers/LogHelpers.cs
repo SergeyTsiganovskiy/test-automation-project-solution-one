@@ -1,8 +1,7 @@
-﻿using EAAutoFramework.Config;
-using System;
+﻿using System;
 using System.IO;
 
-namespace EAAutoFramework.Helpers
+namespace framework.Helpers
 {
     public class LogHelpers
     {

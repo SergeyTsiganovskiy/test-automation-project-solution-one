@@ -1,9 +1,7 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
 using System.IO;
-using EAAutoFramework.Base;
-using Microsoft.Extensions.Configuration;
 
-namespace EAAutoFramework.Config
+namespace framework.Config
 {
     public class ConfigReader
     {

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace EAAutoFramework.Helpers
+namespace framework.Helpers
 {
     public static class DataHelperExtensions
     {
@@ -49,8 +49,8 @@ namespace EAAutoFramework.Helpers
             try
             {
                 //Checking the state of the connection
-                if (sqlConnection == null || ((sqlConnection != null && (sqlConnection.State == ConnectionState.Closed ||
-                    sqlConnection.State == ConnectionState.Broken))))
+                if (sqlConnection == null || sqlConnection != null && (sqlConnection.State == ConnectionState.Closed ||
+                    sqlConnection.State == ConnectionState.Broken))
                     sqlConnection.Open();
 
                 SqlDataAdapter dataAdaptor = new SqlDataAdapter();

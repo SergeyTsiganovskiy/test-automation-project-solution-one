@@ -1,15 +1,14 @@
-﻿using EAAutoFramework.Base;
-using CrossPlatformEATest.Pages;
+﻿using framework.Base;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
-using EAEmployeeTest.Pages;
+using tests.Pages;
 
-namespace CrossPlatformEATest.Steps
+namespace tests.Steps
 {
     [Binding]
     public class LoginSteps : BaseStep
-    { 
-        
+    {
+
         //Context injection
         private readonly ParallelConfig _parallelConfig;
 

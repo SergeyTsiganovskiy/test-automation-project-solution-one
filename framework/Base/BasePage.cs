@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium.Support.PageObjects;
-
-namespace EAAutoFramework.Base
+﻿namespace framework.Base
 {
     public abstract class BasePage : Base
     {

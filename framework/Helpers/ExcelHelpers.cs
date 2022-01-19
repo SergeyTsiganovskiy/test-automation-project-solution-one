@@ -1,13 +1,11 @@
-﻿using System;
+﻿using ExcelDataReader;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ExcelDataReader;
 
-namespace EAAutoFramework.Helpers
+namespace framework.Helpers
 {
     public class ExcelHelpers
     {

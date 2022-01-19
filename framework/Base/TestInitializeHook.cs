@@ -1,14 +1,13 @@
-﻿using EAAutoFramework.Config;
-using EAAutoFramework.Helpers;
-using OpenQA.Selenium.IE;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Chrome;
-using TechTalk.SpecFlow;
-using OpenQA.Selenium.Remote;
-using System;
+﻿using framework.Config;
+using framework.Helpers;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Remote;
+using TechTalk.SpecFlow;
 
-namespace EAAutoFramework.Base
+namespace framework.Base
 {
     public class TestInitializeHook : Steps
     {

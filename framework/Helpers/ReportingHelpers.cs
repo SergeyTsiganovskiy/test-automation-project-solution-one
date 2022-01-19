@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EAAutoFramework.Helpers
+namespace framework.Helpers
 {
     class ReportingHelpers
     {
