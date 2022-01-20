@@ -44,7 +44,6 @@ namespace framework.Helpers
         //Execution
         public static DataTable ExecuteQuery(this SqlConnection sqlConnection, string queryString)
         {
-
             DataSet dataset;
             try
             {

@@ -8,8 +8,6 @@ using System.Configuration;
 using Newtonsoft.Json;
 using System.IO;
 using framework.Settings;
-//Same parallel
-[assembly: Parallelizable(ParallelScope.Fixtures)]
 
 namespace tests.Hooks
 {
@@ -80,9 +78,6 @@ namespace tests.Hooks
         [BeforeTestRun]
         public static void TestInitalize()
         {
-            //InitializeSettings();
-            //Settings.ApplicationCon = Settings.ApplicationCon.DBConnect(Settings.AppConnectionString);
-
             //Initialize Extent report before test starts
             var htmlReporter = new ExtentHtmlReporter(@"C:\extentreport\SeleniumWithSpecflow\SpecflowParallelTest\ExtentReport.html");
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
@@ -99,7 +94,6 @@ namespace tests.Hooks
 
             //klov.ReportName = "Karthik KK" + DateTime.Now.ToString();
 
-
             extent.AttachReporter(htmlReporter);
         }
 
@@ -108,7 +102,7 @@ namespace tests.Hooks
         public void Initialize()
         {
             //Set all the settings for framework
-            var text = File.ReadAllText(@".\Config\settings.json");
+            var text = File.ReadAllText(@".\Settings\settings.json");
             _settings = JsonConvert.DeserializeObject<Settings>(text);
             _settings.ApplicationDbConnection = _settings.ApplicationDbConnection.DBConnect(_settings.ConnectionString);
             //Set Log
